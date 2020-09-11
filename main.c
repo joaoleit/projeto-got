@@ -3,7 +3,7 @@
 #include <time.h>
 
 char  reinicio = 1;
-int end = 0, jogo = 0, conti = 0, contp = 0, contq = 0;
+int end = 0, jogo = 0, conti = 0, contp = 0;
 int pos1 = 0, pos2 = 0, vida = 100, vida_cersei = 100, vida_rei = 200, cersei = 0;
 
 int mapa[10][10] = {1,5,0,0,0,0,0,0,0,0,
@@ -103,7 +103,6 @@ void menu(void){
 void mapaStatus(void){
   conti = 0;
   contp = 0;
-  contq = 0;
   printf("\n");
   for(int i = 0; i < 10; i++)
   {
@@ -115,8 +114,8 @@ void mapaStatus(void){
       else if(mapa[i][j] == 4) printf("W ");
       else if(mapa[i][j] == 7)
       {
-         printf("O ");
-         contp++;
+        printf("O ");
+        contp++;
       }
       else if(mapa[i][j] == 9)
       {
@@ -127,7 +126,7 @@ void mapaStatus(void){
     }
     printf("\n");
   }
-  printf("P: %d, I: %d\n", contp, conti);
+  printf("P: %d    |I: %d\n", contp, conti);
 }
 
 void movimentacao(void){
@@ -191,8 +190,8 @@ void movimentacao(void){
         }
         else
         {
-        printf("Jon encontrou uma pocao e recuperou 5 de vida\n");
-        vida += 5;
+          printf("Jon encontrou uma pocao e recuperou 5 de vida\n");
+          vida += 5;
         }
         mapa[pos1 - 1][pos2] = 1;
         mapa[pos1][pos2] = 0;
@@ -536,12 +535,12 @@ void guerra(void){
       {
         printf("Cersei nao conseguiu dar dano\n");
       }
-      printf("Vida atual do Jon: %d\nVida atual da Cersei: %d\n", vida, vida_cersei);
+      printf("\nVida atual do Jon: %d\nVida atual da Cersei: %d\n", vida, vida_cersei);
       cont++;
     }
     if(vitoria == 1)
     {
-      printf("Voce derrotou a Cersei e ganhou 100 de vida\nPressione ENTER para continuar: ");
+      printf("\nVoce derrotou a Cersei e ganhou 100 de vida\nPressione ENTER para continuar: ");
       getchar();
       vida += 100;
     }
@@ -598,7 +597,7 @@ void guerra(void){
       {
         printf("Rei da noite nao conseguiu dar dano\n");
       }
-      printf("Vida atual do Jon: %d\nVida atual do Rei da Noite: %d\n", vida, vida_rei);
+      printf("\nVida atual do Jon: %d\nVida atual do Rei da Noite: %d\n", vida, vida_rei);
       cont++;
     }
     if(vitoria == 1)
