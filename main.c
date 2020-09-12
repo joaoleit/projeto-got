@@ -3,7 +3,7 @@
 #include <time.h>
 
 char  reinicio = 1;
-int end = 0, jogo = 0, conti = 0, contp = 0;
+int end = 0, jogo = 0;
 int pos1 = 0, pos2 = 0, vida = 100, vida_cersei = 100, vida_rei = 200, cersei = 0;
 
 int mapa[10][10] = {1,5,0,0,0,0,0,0,0,0,
@@ -101,8 +101,7 @@ void menu(void){
 }
 
 void mapaStatus(void){
-  conti = 0;
-  contp = 0;
+  int conti = 0, contp = 0;
   printf("\n");
   for(int i = 0; i < 10; i++)
   {
